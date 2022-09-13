@@ -12,14 +12,14 @@ namespace SpecFlowAutomation.Hooks
     {
         public static IWebDriver driver;
 
-        [AfterScenario]
-        public void EndScenario()
-        {
-            if (driver != null)
-            {
-                driver.Quit();
-            }
-        }
+        //[AfterScenario]
+        //public void EndScenario()
+        //{
+        //    if (driver != null)
+        //    {
+        //        driver.Quit();
+        //    }
+        //}
 
     }
 }
