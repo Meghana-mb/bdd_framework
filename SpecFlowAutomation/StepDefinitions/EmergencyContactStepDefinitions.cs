@@ -54,9 +54,13 @@ namespace SpecFlowAutomation.StepDefinitions
         [Then(@"I should be navigated to emergency contacts section with added contact")]
         public void ThenIShouldBeNavigatedToEmergencyContactsSectionWithAddedContact()
         {
+          
+            Thread.Sleep(5000);
             string actualData = AutomationHooks.driver.FindElement(By.XPath("//div[@class='oxd-table']")).Text;
-            string expectedName = tbl.Rows[0]["Name"];
-            Assert.Equal(expectedName, actualData);
+
+            string expectedName = tbl.Rows[0]["name"];
+            Assert.Contains(expectedName, actualData);
+            Assert.Contains(tbl.Rows[0]["relationship"], actualData);
         }
     }
 }

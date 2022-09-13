@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
 namespace SpecFlowAutomation.Hooks
 {
     [Binding]
@@ -12,14 +13,14 @@ namespace SpecFlowAutomation.Hooks
     {
         public static IWebDriver driver;
 
-        //[AfterScenario]
-        //public void EndScenario()
-        //{
-        //    if (driver != null)
-        //    {
-        //        driver.Quit();
-        //    }
-        //}
+        [AfterScenario]
+        public void endscenario()
+        {
+            if (driver != null)
+            {
+                driver.Quit();
+            }
+        }
 
     }
 }
